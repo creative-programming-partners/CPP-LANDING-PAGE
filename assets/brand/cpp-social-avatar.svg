@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Avatar de CPP</title>
+  <desc id="desc">Símbolo de tres módulos sobre fondo azul obsidiana.</desc>
+  <rect width="512" height="512" rx="112" fill="#050F17"/>
+  <g transform="translate(96 96) scale(2.5)">
+    <path fill="#72F2D2" d="M64 8 112 36 90 49 64 34 42 47 20 34Z"/>
+    <path fill="#F4F7F5" d="M20 34 42 47v36l22 13v25L20 95Z"/>
+    <path fill="#9AAFB9" d="m64 96 22-13V60l22-13v49l-44 25Z"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo de Creative Programming Partners</title>
+  <desc id="desc">Tres módulos geométricos construyen una C abierta y una forma tridimensional.</desc>
+  <path fill="#28C9A8" d="M64 8 112 36 90 49 64 34 42 47 20 34Z"/>
+  <path fill="#050F17" d="M20 34 42 47v36l22 13v25L20 95Z"/>
+  <path fill="#607985" d="m64 96 22-13V60l22-13v49l-44 25Z"/>
+</svg>

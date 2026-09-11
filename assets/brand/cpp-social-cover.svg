@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Portada social de Creative Programming Partners</title>
+  <desc id="desc">Marca CPP y el lema Menos fricción. Más negocio.</desc>
+  <rect width="1200" height="630" fill="#050F17"/>
+  <path fill="#0A1B25" d="M710 0h490v630H507Z"/>
+  <path fill="none" stroke="#18313C" stroke-width="2" d="M756 65 1151 293 756 521 361 293Z"/>
+  <path fill="none" stroke="#18313C" stroke-width="2" d="M756 137 1026 293 756 449 486 293Z"/>
+  <g transform="translate(80 73) scale(1.1)">
+    <path fill="#72F2D2" d="M64 8 112 36 90 49 64 34 42 47 20 34Z"/>
+    <path fill="#F4F7F5" d="M20 34 42 47v36l22 13v25L20 95Z"/>
+    <path fill="#9AAFB9" d="m64 96 22-13V60l22-13v49l-44 25Z"/>
+  </g>
+  <text x="235" y="162" fill="#F4F7F5" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="-3">CPP</text>
+  <text x="239" y="203" fill="#9AAFB9" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="5">CREATIVE PROGRAMMING PARTNERS</text>
+  <text x="82" y="398" fill="#F4F7F5" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="63" font-weight="700" letter-spacing="-2">Menos fricción.</text>
+  <text x="82" y="475" fill="#72F2D2" font-family="Georgia, serif" font-size="72" font-style="italic">Más negocio.</text>
+  <text x="84" y="552" fill="#9AAFB9" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1">WEB · PRODUCTO DIGITAL · AUTOMATIZACIÓN</text>
+</svg>

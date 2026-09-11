@@ -28,3 +28,7 @@ npx serve .
 6. Ajusta los precios referenciales y metadatos del dominio antes del lanzamiento.
 
 El formulario incluye validación en cliente, campo trampa y comprobación de tiempo. La protección definitiva contra spam debe completarse en el servidor.
+
+## Identidad de marca
+
+El prototipo inicial, las reglas de uso y los archivos SVG/PNG están documentados en [`brand/CPP-BRAND-GUIDE.md`](brand/CPP-BRAND-GUIDE.md). La navegación, el pie de página, el favicon y la imagen para compartir ya usan el nuevo sistema visual.
