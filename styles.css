@@ -774,7 +774,7 @@ body:hover .cursor-aura { opacity: 1; }
 .signal-card-a { top: auto; left: 32px; bottom: 72px; }
 .signal-card-b { right: 32px; bottom: 72px; }
 
-.manifesto { padding-block: clamp(170px, 24vw, 310px); }
+.manifesto { padding: clamp(145px, 13vw, 190px) 0 clamp(82px, 8vw, 115px); }
 .manifesto-label { margin-bottom: 42px; color: var(--blue); font-size: .72rem; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
 .manifesto h2 { max-width: 1220px; margin-bottom: 82px; font-size: clamp(3rem, 6.4vw, 6.7rem); line-height: .98; }
 .manifesto h2 .word { display: inline-block; margin-right: .22em; opacity: .12; will-change: opacity, transform; }
@@ -782,14 +782,17 @@ body:hover .cursor-aura { opacity: 1; }
 .manifesto-foot span { padding: 20px 0; color: #9aafb9; font-size: .78rem; letter-spacing: .04em; }
 .manifesto-foot span + span { padding-left: 24px; border-left: 1px solid var(--line); }
 
-.benefits, .services, .projects, .about { padding-block: clamp(150px, 15vw, 220px); }
+.benefits { padding: clamp(105px, 9vw, 130px) 0 clamp(125px, 11vw, 155px); }
+.services { padding: clamp(115px, 10vw, 145px) 0 clamp(130px, 11vw, 165px); }
+.projects { padding: clamp(115px, 10vw, 150px) 0 clamp(95px, 8vw, 125px); }
+.about { padding: clamp(115px, 10vw, 150px) 0 clamp(85px, 8vw, 115px); }
 .benefit-grid { grid-auto-flow: dense; }
 .benefit-grid article { overflow: hidden; }
 .benefit-grid article::after { content: ""; position: absolute; right: -42px; bottom: -42px; width: 110px; height: 110px; border: 1px solid rgba(114,242,210,.11); transform: rotate(45deg); transition: transform .7s cubic-bezier(.16,1,.3,1); }
 .benefit-grid article { position: relative; }
 .benefit-grid article:hover::after { transform: rotate(0deg) scale(1.25); }
 
-.process { padding-block: clamp(150px, 16vw, 220px); }
+.process { padding: clamp(130px, 11vw, 160px) 0 clamp(120px, 10vw, 150px); }
 .process::after { content: "CPP"; right: -3vw; bottom: -6vw; font-size: 22vw; letter-spacing: -.1em; }
 .process .section-shell { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(420px, 1.28fr); align-items: start; gap: clamp(70px, 10vw, 150px); }
 .process .section-heading { margin: 0; padding-top: 12px; }
@@ -842,7 +845,12 @@ body:hover .cursor-aura { opacity: 1; }
   .hero h1 { max-width: none; font-size: clamp(4rem, 16vw, 7rem); }
   .hero-assurance { grid-template-columns: 1fr; max-width: 560px; }
   .hero-assurance li + li { border-left: 0; border-top: 1px solid var(--line); }
-  .manifesto { padding-block: 160px; }
+  .manifesto { padding: 120px 0 82px; }
+  .benefits { padding: 92px 0 112px; }
+  .services { padding: 105px 0 122px; }
+  .process { padding: 112px 0 110px; }
+  .projects { padding: 106px 0 92px; }
+  .about { padding: 106px 0 90px; }
   .manifesto-foot { grid-template-columns: 1fr; }
   .manifesto-foot span + span { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .process .section-shell { display: block; }
@@ -862,6 +870,12 @@ body:hover .cursor-aura { opacity: 1; }
   .hero-assurance { margin-top: 44px; }
   .hero-assurance li { padding-inline: 10px; }
   .coordinate-top, .coordinate-side { display: none; }
+  .manifesto { padding: 102px 0 70px; }
+  .benefits { padding: 78px 0 94px; }
+  .services { padding: 88px 0 105px; }
+  .process { padding: 96px 0 94px; }
+  .projects { padding: 88px 0 76px; }
+  .about { padding: 90px 0 76px; }
   .manifesto h2 { font-size: clamp(2.7rem, 13vw, 4rem); }
   .manifesto-foot { margin-top: 52px; }
   .process-track li, .process-track li + li { min-height: 380px; padding: 38px 0 58px 32px; }
