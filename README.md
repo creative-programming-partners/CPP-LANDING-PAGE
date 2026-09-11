@@ -1,12 +1,14 @@
 # CPP Landing Page
 
-Landing estática para Creative Programming Partners. No requiere instalación ni dependencias de runtime.
+Landing estática para Creative Programming Partners. No requiere instalación; las mejoras de movimiento cargan GSAP y Lenis desde CDN y mantienen una experiencia funcional si no están disponibles.
 
 ## Experiencia incluida
 
 - Dirección visual editorial y tecnológica propia de CPP.
 - Hero orientado a resultados, casos demostrativos y CTA contextual por servicio.
-- Efectos ligeros con CSS y JavaScript nativo: profundidad, spotlight, cinta cinética, progreso de lectura y navegación activa.
+- Hero cinematográfico, manifiesto tipográfico, proceso narrativo fijado y proyectos apilados durante el scroll.
+- Smooth scroll con Lenis y movimiento con GSAP ScrollTrigger: parallax, scrub de texto, secuencias escalonadas y navegación reactiva.
+- Efectos ligeros complementarios: spotlight, aura del cursor, cinta cinética, progreso de lectura y microinteracciones físicas.
 - Respeto automático por `prefers-reduced-motion` y controles accesibles por teclado.
 - Fuente local optimizada en WOFF2, imágenes WebP y favicon SVG.
 

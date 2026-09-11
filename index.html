@@ -21,10 +21,26 @@
     <title>CPP | Web, software y automatización para negocios</title>
     <link rel="icon" href="assets/brand/cpp-social-avatar.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=3" />
-    <script defer src="script.js?v=3"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css" />
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script defer src="script.js?v=4"></script>
   </head>
   <body>
+    <div class="page-loader" data-loader aria-hidden="true">
+      <div class="loader-mark">
+        <svg viewBox="0 0 128 128">
+          <path class="loader-piece loader-piece-a" fill="#72F2D2" d="M64 8 112 36 90 49 64 34 42 47 20 34Z" />
+          <path class="loader-piece loader-piece-b" fill="#F4F7F5" d="M20 34 42 47v36l22 13v25L20 95Z" />
+          <path class="loader-piece loader-piece-c" fill="#9AAFB9" d="m64 96 22-13V60l22-13v49l-44 25Z" />
+        </svg>
+        <span>Creative Programming Partners</span>
+      </div>
+      <div class="loader-line"><i></i></div>
+    </div>
+    <div class="cursor-aura" data-cursor-aura aria-hidden="true"></div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header" data-header>
@@ -95,6 +111,16 @@
         <div class="outcome-track" aria-hidden="true">
           <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
           <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
+        </div>
+      </section>
+
+      <section class="manifesto section-shell" aria-labelledby="manifesto-title">
+        <p class="manifesto-label">Nuestro principio</p>
+        <h2 id="manifesto-title" data-split-words>La tecnología más valiosa no presume su complejidad. Hace que vender, atender y operar se sienta más simple.</h2>
+        <div class="manifesto-foot">
+          <span>Diseño con intención</span>
+          <span>Desarrollo con criterio</span>
+          <span>Resultados que se pueden usar</span>
         </div>
       </section>
 
