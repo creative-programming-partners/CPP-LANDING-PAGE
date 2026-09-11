@@ -37,7 +37,8 @@ document.querySelectorAll('.service-list details').forEach((item) => {
 });
 
 const revealItems = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !reducedMotion) {
   const observer = new IntersectionObserver((entries, activeObserver) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -48,6 +49,79 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+const scrollProgress = document.querySelector('[data-scroll-progress]');
+let scrollTicking = false;
+
+const updateScrollProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+  scrollProgress?.style.setProperty('width', `${progress * 100}%`);
+  scrollTicking = false;
+};
+
+window.addEventListener('scroll', () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  window.requestAnimationFrame(updateScrollProgress);
+}, { passive: true });
+updateScrollProgress();
+
+document.querySelectorAll('[data-spotlight]').forEach((item) => {
+  item.addEventListener('pointermove', (event) => {
+    const bounds = item.getBoundingClientRect();
+    item.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+    item.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+  });
+});
+
+if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+  const tiltTarget = document.querySelector('[data-tilt]');
+  const tiltFrame = tiltTarget?.querySelector('.visual-frame');
+
+  tiltTarget?.addEventListener('pointermove', (event) => {
+    const bounds = tiltTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - .5;
+    const y = (event.clientY - bounds.top) / bounds.height - .5;
+    tiltFrame?.style.setProperty('--tilt-x', `${x * 5}deg`);
+    tiltFrame?.style.setProperty('--tilt-y', `${y * -5}deg`);
+  });
+
+  tiltTarget?.addEventListener('pointerleave', () => {
+    tiltFrame?.style.setProperty('--tilt-x', '0deg');
+    tiltFrame?.style.setProperty('--tilt-y', '0deg');
+  });
+
+  document.querySelectorAll('[data-magnetic]').forEach((button) => {
+    button.addEventListener('pointermove', (event) => {
+      const bounds = button.getBoundingClientRect();
+      const x = (event.clientX - bounds.left - bounds.width / 2) * .08;
+      const y = (event.clientY - bounds.top - bounds.height / 2) * .12;
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    button.addEventListener('pointerleave', () => button.style.removeProperty('transform'));
+  });
+}
+
+const navigationLinks = [...document.querySelectorAll('.site-nav a')];
+const navigationSections = navigationLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if ('IntersectionObserver' in window) {
+  const navigationObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navigationLinks.forEach((link) => {
+        const active = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-30% 0px -60%', threshold: 0 });
+  navigationSections.forEach((section) => navigationObserver.observe(section));
 }
 
 const validationMessages = {
