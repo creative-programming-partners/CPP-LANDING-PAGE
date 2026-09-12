@@ -386,9 +386,9 @@ if (!reduceMotion) {
 const roster = document.querySelector('[data-roster]');
 if (roster) {
   const partners = [
-    { name: 'José Santana', initials: 'JS', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/jose-santana-sl-2005-pc/', photo: 'jose' },
-    { name: 'Darnell Cuba', initials: 'DC', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/darnell-cuba-vega-a7b91b377/', photo: 'darnell' },
-    { name: 'Juan Flores', initials: 'JF', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/juan-diego-flores-rios-425340311/', photo: 'juan' }
+    { name: 'José Santana', initials: 'JS', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/jose-santana-sl-2005-pc/', photo: 'jose', ratio: '1086 / 1448' },
+    { name: 'Darnell Cuba', initials: 'DC', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/darnell-cuba-vega-a7b91b377/', photo: 'darnell', ratio: '1086 / 1448' },
+    { name: 'Juan Flores', initials: 'JF', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/juan-diego-flores-rios-425340311/', photo: 'juan', ratio: '1254 / 1254' }
   ];
   const dialog = roster.querySelector('[data-partner-dialog]');
   const overlay = roster.querySelector('[data-partner-overlay]');
@@ -412,9 +412,13 @@ if (roster) {
     dialog.querySelector('[data-partner-initials]').textContent = partner.initials;
     dialog.querySelector('[data-partner-role]').textContent = partner.role;
     const photo = dialog.querySelector('[data-partner-photo]');
+    photo.closest('.partner-portrait').style.setProperty('--retrato', partner.ratio);
     photo.src = `assets/team/${partner.photo}-480.webp`;
     photo.srcset = `assets/team/${partner.photo}-480.webp 480w, assets/team/${partner.photo}-960.webp 960w`;
     photo.alt = `Retrato de ${partner.name}`;
+    const [anchoNat, altoNat] = partner.ratio.split('/').map(Number);
+    photo.width = 480;
+    photo.height = Math.round(480 * altoNat / anchoNat);
     const profile = dialog.querySelector('[data-partner-link]');
     profile.href = partner.linkedin;
     profile.setAttribute('aria-label', `Ver el perfil de ${partner.name} en LinkedIn`);
