@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#071521" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8f8" />
     <meta
       name="description"
       content="CPP diseña páginas web, tiendas online, automatizaciones y sistemas a medida para negocios que quieren vender y operar mejor."
@@ -20,408 +19,509 @@
     <meta name="robots" content="index, follow" />
     <title>CPP | Web, software y automatización para negocios</title>
     <link rel="icon" href="assets/brand/cpp-social-avatar.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css" />
-    <link rel="stylesheet" href="styles.css?v=5" />
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
-    <script defer src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
-    <script defer src="script.js?v=4"></script>
+    <link rel="preload" href="assets/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="styles.css?v=6" />
+    <script defer src="script.js?v=5"></script>
   </head>
   <body>
-    <div class="page-loader" data-loader aria-hidden="true">
-      <div class="loader-mark">
-        <svg viewBox="0 0 128 128">
-          <path class="loader-piece loader-piece-a" fill="#72F2D2" d="M64 8 112 36 90 49 64 34 42 47 20 34Z" />
-          <path class="loader-piece loader-piece-b" fill="#F4F7F5" d="M20 34 42 47v36l22 13v25L20 95Z" />
-          <path class="loader-piece loader-piece-c" fill="#9AAFB9" d="m64 96 22-13V60l22-13v49l-44 25Z" />
-        </svg>
-        <span>Creative Programming Partners</span>
-      </div>
-      <div class="loader-line"><i></i></div>
-    </div>
-    <div class="cursor-aura" data-cursor-aura aria-hidden="true"></div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="cursor-aura" data-aura aria-hidden="true"></div>
 
     <header class="site-header" data-header>
-      <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
       <div class="nav-shell">
         <a class="brand" href="#inicio" aria-label="CPP, ir al inicio">
-          <img class="brand-symbol" src="assets/brand/cpp-symbol-dark.svg" alt="" width="40" height="40" />
+          <svg class="brand-symbol" viewBox="0 0 128 128" width="34" height="34" aria-hidden="true">
+            <path data-mod="0" fill="var(--accent)" d="M64 8 112 36 90 49 64 34 42 47 20 34Z" />
+            <path data-mod="1" fill="var(--ink)" d="M20 34 42 47v36l22 13v25L20 95Z" />
+            <path data-mod="2" fill="var(--steel)" d="m64 96 22-13V60l22-13v49l-44 25Z" />
+          </svg>
           <span class="brand-name"><strong>CPP</strong><small>Creative Programming Partners</small></span>
         </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Abrir menú</span>
-          <span></span><span></span>
-        </button>
 
         <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
           <a href="#servicios">Servicios</a>
           <a href="#proyectos">Proyectos</a>
+          <a href="#proceso">Proceso</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#preguntas">Preguntas frecuentes</a>
-          <a href="#contacto">Contacto</a>
         </nav>
 
-        <a class="button button-small nav-cta" href="#contacto">Solicitar cotización</a>
+        <a class="button button-small nav-cta" href="#contacto" data-magnetic>Solicitar cotización</a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Abrir menú</span>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
       </div>
+      <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
     </header>
 
     <main id="contenido">
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <p class="hero-kicker"><span aria-hidden="true"></span> Diseño web · software · automatización</p>
-          <h1 id="hero-title">Menos fricción.<br /><em>Más negocio.</em></h1>
-          <p class="hero-lede">Diseñamos páginas, tiendas y sistemas a medida para ayudarte a vender, ordenar tu operación y dejar atrás tareas repetitivas.</p>
-          <div class="hero-actions">
-            <a class="button" href="#contacto" data-magnetic>Cuéntanos tu proyecto <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#proyectos">Explorar capacidades <span aria-hidden="true">↓</span></a>
-          </div>
-          <ul class="hero-assurance" aria-label="Qué puedes esperar de CPP">
-            <li><span>01</span> Diseño y desarrollo en un mismo equipo</li>
-            <li><span>02</span> Alcance y precios explicados con claridad</li>
-            <li><span>03</span> Acompañamiento después del lanzamiento</li>
-          </ul>
-        </div>
+      <section class="hero" id="inicio" aria-labelledby="hero-title" data-anim-scope>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <canvas class="hero-canvas" data-3d="panels" aria-hidden="true"></canvas>
 
-        <figure class="hero-visual reveal reveal-delay" data-tilt data-spotlight>
-          <div class="visual-frame">
-            <img
-              src="assets/hero.webp"
-              width="1855"
-              height="848"
-              alt="Composición abstracta de módulos digitales conectados en azul y blanco"
-              fetchpriority="high"
-            />
-            <span class="visual-coordinate coordinate-top" aria-hidden="true">CPP / 12.046° S</span>
-            <span class="visual-coordinate coordinate-side" aria-hidden="true">CREATIVE SYSTEMS</span>
-            <div class="visual-caption">
-              <span>Del problema al producto</span>
-              <strong>Una solución pensada alrededor de tu negocio.</strong>
+        <div class="hero-inner section-shell">
+          <div class="hero-copy">
+            <p class="hero-kicker" data-reveal="0"><span aria-hidden="true"></span> Diseño web · software · automatización</p>
+            <h1 id="hero-title" data-reveal="1">Menos fricción.<br /><em>Más negocio.</em></h1>
+            <p class="hero-lede" data-reveal="2">
+              Diseñamos páginas, tiendas y sistemas a medida para ayudarte a vender, ordenar tu operación y dejar atrás tareas repetitivas.
+            </p>
+            <div class="hero-actions" data-reveal="3">
+              <a class="button button-ink" href="#contacto" data-magnetic>
+                Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+                <i class="sheen" data-sheen aria-hidden="true"></i>
+              </a>
+              <a class="text-link" href="#proyectos">Explorar capacidades <span aria-hidden="true">↓</span></a>
             </div>
+            <ul class="hero-assurance" data-reveal="4" aria-label="Qué puedes esperar de CPP">
+              <li><span>01</span> Diseño y desarrollo en un mismo equipo</li>
+              <li><span>02</span> Alcance y precios explicados con claridad</li>
+              <li><span>03</span> Acompañamiento después del lanzamiento</li>
+            </ul>
           </div>
-          <div class="signal-card signal-card-a" aria-hidden="true"><span>ESTADO</span><strong>Diseñando</strong><i></i></div>
-          <div class="signal-card signal-card-b" aria-hidden="true"><span>SISTEMA</span><strong>Listo para crecer</strong></div>
-        </figure>
+
+          <figure class="hero-visual" data-reveal="2" data-tilt data-spot>
+            <div class="visual-frame" data-parallax="0.05">
+              <img
+                src="assets/hero.webp"
+                width="1855"
+                height="848"
+                alt="Composición abstracta de módulos digitales conectados en azul y blanco"
+                fetchpriority="high"
+              />
+              <span class="visual-spot" data-spot-bg aria-hidden="true"></span>
+              <span class="visual-coordinate" aria-hidden="true">CPP / 12.046° S</span>
+              <figcaption class="visual-caption">
+                <span>Del problema al producto</span>
+                <strong>Una solución pensada alrededor de tu negocio.</strong>
+              </figcaption>
+            </div>
+            <div class="signal-card signal-card-a" aria-hidden="true"><span>ESTADO</span><strong>Diseñando <i></i></strong></div>
+            <div class="signal-card signal-card-b" aria-hidden="true"><span>SISTEMA</span><strong>Listo para crecer</strong></div>
+          </figure>
+        </div>
       </section>
 
-      <section class="outcome-ribbon" aria-label="Áreas en las que trabaja CPP">
+      <section class="outcome-ribbon" aria-label="Áreas en las que trabaja CPP" data-anim-scope>
         <p class="sr-only">Diseño web, comercio electrónico, sistemas a medida, reservas y automatización.</p>
         <div class="outcome-track" aria-hidden="true">
-          <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
-          <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
+          <div class="outcome-group">
+            <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
+          </div>
+          <div class="outcome-group">
+            <span>Diseño web</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Sistemas a medida</span><i>✦</i><span>Reservas</span><i>✦</i><span>Automatización</span><i>✦</i>
+          </div>
         </div>
       </section>
 
-      <section class="manifesto section-shell" aria-labelledby="manifesto-title">
-        <p class="manifesto-label">Nuestro principio</p>
-        <h2 id="manifesto-title" data-split-words>La tecnología más valiosa no presume su complejidad. Hace que vender, atender y operar se sienta más simple.</h2>
-        <div class="manifesto-foot">
-          <span>Diseño con intención</span>
-          <span>Desarrollo con criterio</span>
-          <span>Resultados que se pueden usar</span>
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <div class="section-shell manifesto-grid">
+          <div class="manifesto-copy">
+            <p class="eyebrow eyebrow-accent" data-reveal="0">Nuestro principio</p>
+            <h2 id="manifesto-title">
+              <span data-reveal="1">La tecnología más valiosa</span>
+              <span class="is-muted" data-reveal="2">no presume su complejidad.</span>
+              <span data-reveal="3">Hace que vender, atender y operar</span>
+              <span data-reveal="4"><em>se sienta más simple.</em></span>
+            </h2>
+            <div class="manifesto-foot" data-reveal="5">
+              <span>Diseño con intención</span>
+              <span>Desarrollo con criterio</span>
+              <span>Resultados que se pueden usar</span>
+            </div>
+          </div>
+
+          <figure class="manifesto-figure" data-reveal="2">
+            <div class="symbol-stage">
+              <canvas
+                data-3d="symbol"
+                role="img"
+                aria-label="Símbolo tridimensional de CPP formado por tres módulos. Arrástralo para girarlo."
+              ></canvas>
+              <span class="symbol-hint" data-3d-hint>arrastra para girar</span>
+              <span class="symbol-tag" aria-hidden="true">CPP / 3 MÓDULOS</span>
+            </div>
+            <figcaption>
+              <strong>Tres perspectivas. Un mismo flujo.</strong>
+              <span>Tres módulos independientes que cierran una sola figura.</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
       <section class="benefits section-shell" aria-labelledby="benefits-title">
-        <div class="section-intro reveal">
-          <p class="eyebrow">Lo que cambia</p>
-          <h2 id="benefits-title">No hacemos páginas para decorar. Construimos herramientas para avanzar.</h2>
-          <p>Cada decisión tiene una función: explicar mejor, convertir más visitas, reducir trabajo manual o hacer más simple la operación.</p>
+        <div class="section-intro">
+          <p class="eyebrow" data-reveal="0">Lo que cambia</p>
+          <h2 id="benefits-title" data-reveal="1">No hacemos páginas para decorar. Construimos herramientas para avanzar.</h2>
+          <p data-reveal="2">Cada decisión tiene una función: explicar mejor, convertir más visitas, reducir trabajo manual o hacer más simple la operación.</p>
         </div>
-        <div class="benefit-grid reveal">
-          <article><span>01</span><h3>Diseño adaptable</h3><p>Una experiencia clara en computadoras, tabletas y celulares.</p></article>
-          <article><span>02</span><h3>Soluciones propias</h3><p>Cada decisión responde a tus objetivos, procesos y clientes.</p></article>
-          <article><span>03</span><h3>Desarrollo optimizado</h3><p>Código ligero, rápido y preparado para crecer contigo.</p></article>
-          <article><span>04</span><h3>Menos tareas manuales</h3><p>Automatizamos pasos repetitivos para ahorrar tiempo y errores.</p></article>
-          <article><span>05</span><h3>Comunicación cercana</h3><p>Avances claros y revisiones contigo durante todo el proyecto.</p></article>
-          <article><span>06</span><h3>Soporte posterior</h3><p>Seguimos disponibles después de publicar la solución.</p></article>
+        <div class="benefit-grid">
+          <article data-reveal="0" data-spot><span>01</span><h3>Diseño adaptable</h3><p>Una experiencia clara en computadoras, tabletas y celulares.</p></article>
+          <article data-reveal="1" data-spot><span>02</span><h3>Soluciones propias</h3><p>Cada decisión responde a tus objetivos, procesos y clientes.</p></article>
+          <article data-reveal="2" data-spot><span>03</span><h3>Desarrollo optimizado</h3><p>Código ligero, rápido y preparado para crecer contigo.</p></article>
+          <article data-reveal="3" data-spot><span>04</span><h3>Menos tareas manuales</h3><p>Automatizamos pasos repetitivos para ahorrar tiempo y errores.</p></article>
+          <article data-reveal="4" data-spot><span>05</span><h3>Comunicación cercana</h3><p>Avances claros y revisiones contigo durante todo el proyecto.</p></article>
+          <article data-reveal="5" data-spot><span>06</span><h3>Soporte posterior</h3><p>Seguimos disponibles después de publicar la solución.</p></article>
         </div>
       </section>
 
-      <section class="services section-shell" id="servicios" aria-labelledby="services-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Servicios</p>
-          <h2 id="services-title">La solución correcta para el momento de tu negocio.</h2>
-          <p>Empieza con una necesidad concreta. Nosotros definimos el alcance, la tecnología y el camino más eficiente.</p>
-        </div>
-
-        <div class="service-columns reveal">
-          <div class="service-list">
-            <details open>
-              <summary><span>Landing pages orientadas a conversión</span><strong>Desde: USD 280</strong></summary>
-              <div class="service-body">
-                <p>Una página enfocada en presentar tu oferta y convertir visitas en oportunidades.</p>
-                <ul><li>Mensaje y jerarquía claros</li><li>Diseño responsive</li><li>Formulario de contacto</li></ul>
-                <a href="#contacto" data-service="Landing page">Solicitar cotización</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Páginas web corporativas</span><strong>Desde: USD 480</strong></summary>
-              <div class="service-body">
-                <p>Una presencia profesional para explicar quién eres, qué haces y cómo contactarte.</p>
-                <ul><li>Estructura de contenidos</li><li>SEO básico</li><li>Secciones fáciles de actualizar</li></ul>
-                <a href="#contacto" data-service="Página web corporativa">Solicitar cotización</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Tiendas e-commerce</span><strong>Desde: USD 850</strong></summary>
-              <div class="service-body">
-                <p>Una tienda clara y confiable para mostrar productos, recibir pedidos y vender online.</p>
-                <ul><li>Catálogo y carrito</li><li>Flujo de compra optimizado</li><li>Integraciones de pago</li></ul>
-                <a href="#contacto" data-service="Tienda e-commerce">Solicitar cotización</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Aplicaciones web a medida</span><strong>Desde: USD 1,200</strong></summary>
-              <div class="service-body">
-                <p>Herramientas digitales creadas alrededor de la operación real de tu empresa.</p>
-                <ul><li>Flujos personalizados</li><li>Accesos por usuario</li><li>Arquitectura escalable</li></ul>
-                <a href="#contacto" data-service="Aplicación web a medida">Solicitar cotización</a>
-              </div>
-            </details>
-          </div>
-
-          <div class="service-list">
-            <details>
-              <summary><span>Sistemas de reservas online</span><strong>Desde: USD 950</strong></summary>
-              <div class="service-body">
-                <p>Recibe reservas todo el día y administra disponibilidad desde un panel central.</p>
-                <ul><li>Calendario disponible</li><li>Panel de gestión</li><li>Confirmaciones automáticas</li></ul>
-                <a href="#contacto" data-service="Sistema de reservas">Solicitar cotización</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Catálogos digitales</span><strong>Desde: USD 380</strong></summary>
-              <div class="service-body">
-                <p>Presenta productos o servicios en un formato visual, ordenado y fácil de compartir.</p>
-                <ul><li>Búsqueda y categorías</li><li>Consulta rápida</li><li>Actualización sencilla</li></ul>
-                <a href="#contacto" data-service="Catálogo digital">Solicitar cotización</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Automatización de procesos</span><strong>Desde: USD 320</strong></summary>
-              <div class="service-body">
-                <p>Conecta tareas repetitivas para que la información avance sin trabajo manual innecesario.</p>
-                <ul><li>Menos errores</li><li>Más tiempo disponible</li><li>Procesos consistentes</li></ul>
-                <a href="#contacto" data-service="Automatización de procesos">Solicitar cotización</a>
-              </div>
-            </details>
-            <aside class="service-callout">
-              <p>¿No sabes cuál elegir?</p>
-              <h3>Cuéntanos cómo trabajas hoy.</h3>
-              <a href="#contacto">Solicitar cotización</a>
-            </aside>
-          </div>
-        </div>
-
-        <p class="price-note">Los precios son referenciales y pueden variar según las necesidades, funcionalidades y alcance de cada proyecto. Contáctanos para recibir una cotización personalizada.</p>
-      </section>
-
-      <section class="process" id="proceso" aria-labelledby="process-title">
+      <section class="services" id="servicios" aria-labelledby="services-title">
         <div class="section-shell">
-          <div class="section-heading compact reveal">
-            <h2 id="process-title">Un proceso claro de principio a fin.</h2>
-            <p>Siempre sabrás qué estamos haciendo, qué necesitamos de ti y cuál es el siguiente avance.</p>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-reveal="0">Servicios</p>
+              <h2 id="services-title" data-reveal="1">La solución correcta para el momento de tu negocio.</h2>
+            </div>
+            <p data-reveal="2">Empieza con una necesidad concreta. Nosotros definimos el alcance, la tecnología y el camino más eficiente.</p>
           </div>
-          <ol class="process-track reveal">
-            <li><span>Conversamos</span><h3>Entendemos el negocio</h3><p>Conocemos tus necesidades, usuarios y prioridades.</p></li>
-            <li><span>Definimos</span><h3>Preparamos la propuesta</h3><p>Acordamos alcance, diseño, tiempos y entregables.</p></li>
-            <li><span>Construimos</span><h3>Desarrollamos y revisamos</h3><p>Avanzamos por entregas para validar contigo.</p></li>
-            <li><span>Publicamos</span><h3>Lanzamos y acompañamos</h3><p>Ponemos todo en marcha y ofrecemos soporte.</p></li>
-          </ol>
+
+          <div class="service-columns" data-reveal="3">
+            <div class="service-list">
+              <details open>
+                <summary><span>Landing pages orientadas a conversión</span><strong>Desde: USD 280</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Una página enfocada en presentar tu oferta y convertir visitas en oportunidades.</p>
+                  <ul><li>Mensaje y jerarquía claros</li><li>Diseño responsive</li><li>Formulario de contacto</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Landing page">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <details>
+                <summary><span>Páginas web corporativas</span><strong>Desde: USD 480</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Una presencia profesional para explicar quién eres, qué haces y cómo contactarte.</p>
+                  <ul><li>Estructura de contenidos</li><li>SEO básico</li><li>Secciones fáciles de actualizar</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Página web corporativa">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <details>
+                <summary><span>Tiendas e-commerce</span><strong>Desde: USD 850</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Una tienda clara y confiable para mostrar productos, recibir pedidos y vender online.</p>
+                  <ul><li>Catálogo y carrito</li><li>Flujo de compra optimizado</li><li>Integraciones de pago</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Tienda e-commerce">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <details>
+                <summary><span>Aplicaciones web a medida</span><strong>Desde: USD 1,200</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Herramientas digitales creadas alrededor de la operación real de tu empresa.</p>
+                  <ul><li>Flujos personalizados</li><li>Accesos por usuario</li><li>Arquitectura escalable</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Aplicación web a medida">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+            </div>
+
+            <div class="service-list">
+              <details>
+                <summary><span>Sistemas de reservas online</span><strong>Desde: USD 950</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Recibe reservas todo el día y administra disponibilidad desde un panel central.</p>
+                  <ul><li>Calendario disponible</li><li>Panel de gestión</li><li>Confirmaciones automáticas</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Sistema de reservas">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <details>
+                <summary><span>Catálogos digitales</span><strong>Desde: USD 380</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Presenta productos o servicios en un formato visual, ordenado y fácil de compartir.</p>
+                  <ul><li>Búsqueda y categorías</li><li>Consulta rápida</li><li>Actualización sencilla</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Catálogo digital">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <details>
+                <summary><span>Automatización de procesos</span><strong>Desde: USD 320</strong><i class="plus" data-plus aria-hidden="true">+</i></summary>
+                <div class="service-body">
+                  <p>Conecta tareas repetitivas para que la información avance sin trabajo manual innecesario.</p>
+                  <ul><li>Menos errores</li><li>Más tiempo disponible</li><li>Procesos consistentes</li></ul>
+                  <a class="text-arrow" href="#contacto" data-service="Automatización de procesos">Solicitar cotización <span aria-hidden="true">↗</span></a>
+                </div>
+              </details>
+              <aside class="service-callout">
+                <p class="eyebrow eyebrow-quiet">¿No sabes cuál elegir?</p>
+                <h3>Cuéntanos cómo trabajas hoy.</h3>
+                <p>Revisamos tu operación y te proponemos el punto de partida con mejor retorno.</p>
+                <a class="button button-light" href="#contacto" data-magnetic>Hablemos <span aria-hidden="true">↗</span></a>
+              </aside>
+            </div>
+          </div>
+
+          <p class="price-note">
+            Los precios son referenciales y pueden variar según las necesidades, funcionalidades y alcance de cada proyecto.
+            Contáctanos para recibir una cotización personalizada.
+          </p>
         </div>
       </section>
 
-      <section class="projects section-shell" id="proyectos" aria-labelledby="projects-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Nuestros trabajos</p>
-          <h2 id="projects-title">No mostramos humo. Mostramos lo que sabemos construir.</h2>
-          <p>Conceptos demostrativos para explorar nuestras capacidades mientras documentamos los primeros casos públicos de CPP. Sin clientes ni resultados inventados.</p>
+      <section class="process section-shell" id="proceso" aria-labelledby="process-title">
+        <div class="section-heading compact">
+          <p class="eyebrow" data-reveal="0">Proceso</p>
+          <h2 id="process-title" data-reveal="1">Un proceso claro de principio a fin.</h2>
+          <p data-reveal="2">Siempre sabrás qué estamos haciendo, qué necesitamos de ti y cuál es el siguiente avance.</p>
         </div>
+        <ol class="process-track">
+          <li data-reveal="0">
+            <div class="process-rule"><span>01</span><i data-line aria-hidden="true"></i></div>
+            <span class="process-step">Conversamos</span>
+            <h3>Entendemos el negocio</h3>
+            <p>Conocemos tus necesidades, usuarios y prioridades.</p>
+          </li>
+          <li data-reveal="1">
+            <div class="process-rule"><span>02</span><i data-line aria-hidden="true"></i></div>
+            <span class="process-step">Definimos</span>
+            <h3>Preparamos la propuesta</h3>
+            <p>Acordamos alcance, diseño, tiempos y entregables.</p>
+          </li>
+          <li data-reveal="2">
+            <div class="process-rule"><span>03</span><i data-line aria-hidden="true"></i></div>
+            <span class="process-step">Construimos</span>
+            <h3>Desarrollamos y revisamos</h3>
+            <p>Avanzamos por entregas para validar contigo.</p>
+          </li>
+          <li data-reveal="3">
+            <div class="process-rule"><span>04</span><i data-line aria-hidden="true"></i></div>
+            <span class="process-step">Publicamos</span>
+            <h3>Lanzamos y acompañamos</h3>
+            <p>Ponemos todo en marcha y ofrecemos soporte.</p>
+          </li>
+        </ol>
+      </section>
 
-        <div class="project-feature reveal" data-spotlight>
-          <div class="project-media">
-            <img src="assets/hero.webp" width="1855" height="848" loading="lazy" alt="Concepto visual de un panel operativo modular" />
-            <span class="project-number" aria-hidden="true">01</span>
-            <span class="project-status">Concepto demostrativo</span>
+      <section class="projects" id="proyectos" aria-labelledby="projects-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-reveal="0">Nuestros trabajos</p>
+              <h2 id="projects-title" data-reveal="1">No mostramos humo. Mostramos lo que sabemos construir.</h2>
+            </div>
+            <p data-reveal="2">Conceptos demostrativos para explorar nuestras capacidades mientras documentamos los primeros casos públicos de CPP. Sin clientes ni resultados inventados.</p>
           </div>
-          <div class="project-copy">
-            <span>Aplicación web</span>
-            <h3>Panel operativo modular</h3>
-            <p>Una interfaz central para convertir procesos dispersos en un flujo de trabajo visible, ordenado y fácil de gestionar.</p>
-            <dl>
-              <div><dt>Ideal para</dt><dd>Operaciones, inventario y seguimiento</dd></div>
-              <div><dt>Enfoque</dt><dd>Claridad, control y menos pasos manuales</dd></div>
-              <div><dt>Incluye</dt><dd>Panel, roles y automatizaciones</dd></div>
-            </dl>
-            <a class="project-action" href="#contacto" data-service="Aplicación web a medida">Quiero explorar una solución así <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
 
-        <div class="project-pair reveal">
-          <article data-spotlight>
-            <div class="project-media">
-              <img src="assets/commerce.webp" width="1448" height="1086" loading="lazy" alt="Concepto visual de una tienda digital enfocada en conversión" />
-              <span class="project-number" aria-hidden="true">02</span>
+          <div class="project-feature" data-reveal="0">
+            <div class="project-media" data-zoom-box>
+              <img data-zoom src="assets/hero.webp" width="1855" height="848" loading="lazy" alt="Concepto visual de un panel operativo modular" />
+              <span class="project-number" aria-hidden="true">01</span>
+              <span class="project-status">Concepto demostrativo</span>
             </div>
             <div class="project-copy">
-              <span>Comercio digital</span>
-              <h3>Una tienda que guía la compra</h3>
-              <p>Catálogo claro, decisiones simples y un recorrido pensado para convertir interés en pedidos.</p>
-              <a class="project-action" href="#contacto" data-service="Tienda e-commerce">Explorar e-commerce <span aria-hidden="true">↗</span></a>
+              <span class="eyebrow">Aplicación web</span>
+              <h3>Panel operativo modular</h3>
+              <p>Una interfaz central para convertir procesos dispersos en un flujo de trabajo visible, ordenado y fácil de gestionar.</p>
+              <dl>
+                <div><dt>Ideal para</dt><dd>Operaciones, inventario y seguimiento</dd></div>
+                <div><dt>Enfoque</dt><dd>Claridad, control y menos pasos manuales</dd></div>
+                <div><dt>Incluye</dt><dd>Panel, roles y automatizaciones</dd></div>
+              </dl>
+              <a class="text-arrow" href="#contacto" data-service="Aplicación web a medida">Quiero explorar una solución así <span aria-hidden="true">↗</span></a>
             </div>
-          </article>
-          <article data-spotlight>
-            <div class="project-media">
-              <img src="assets/automation.webp" width="1448" height="1086" loading="lazy" alt="Concepto visual de un sistema de reservas y automatización" />
-              <span class="project-number" aria-hidden="true">03</span>
-            </div>
-            <div class="project-copy">
-              <span>Reservas + automatización</span>
-              <h3>Disponibilidad sin idas y vueltas</h3>
-              <p>Reservas, confirmaciones y gestión en un solo flujo para atender incluso cuando el negocio está cerrado.</p>
-              <a class="project-action" href="#contacto" data-service="Sistema de reservas">Explorar reservas <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
+          </div>
+
+          <div class="project-pair">
+            <article data-reveal="1">
+              <div class="project-media" data-zoom-box>
+                <img data-zoom src="assets/commerce.webp" width="1448" height="1086" loading="lazy" alt="Concepto visual de una tienda digital enfocada en conversión" />
+                <span class="project-number" aria-hidden="true">02</span>
+              </div>
+              <div class="project-copy">
+                <span class="eyebrow">Comercio digital</span>
+                <h3>Una tienda que guía la compra</h3>
+                <p>Catálogo claro, decisiones simples y un recorrido pensado para convertir interés en pedidos.</p>
+                <a class="text-arrow" href="#contacto" data-service="Tienda e-commerce">Explorar e-commerce <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article data-reveal="2">
+              <div class="project-media" data-zoom-box>
+                <img data-zoom src="assets/automation.webp" width="1448" height="1086" loading="lazy" alt="Concepto visual de un sistema de reservas y automatización" />
+                <span class="project-number" aria-hidden="true">03</span>
+              </div>
+              <div class="project-copy">
+                <span class="eyebrow">Reservas + automatización</span>
+                <h3>Disponibilidad sin idas y vueltas</h3>
+                <p>Reservas, confirmaciones y gestión en un solo flujo para atender incluso cuando el negocio está cerrado.</p>
+                <a class="text-arrow" href="#contacto" data-service="Sistema de reservas">Explorar reservas <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="about section-shell" id="nosotros" aria-labelledby="about-title">
-        <div class="about-copy reveal">
-          <p class="eyebrow">El equipo</p>
-          <h2 id="about-title">Creatividad, estrategia y programación en el mismo equipo.</h2>
-          <p>Somos tres socios trabajando con una misma visión: entender bien el problema antes de escribir una sola línea de código.</p>
+        <div class="about-copy">
+          <p class="eyebrow" data-reveal="0">El equipo</p>
+          <h2 id="about-title" data-reveal="1">Creatividad, estrategia y programación en el mismo equipo.</h2>
+          <p data-reveal="2">Somos tres socios trabajando con una misma visión: entender bien el problema antes de escribir una sola línea de código.</p>
         </div>
-        <div class="team-grid reveal">
-          <article data-spotlight>
-            <div class="portrait-placeholder" aria-hidden="true"><span class="partner-index">Partner 01</span><strong>JS</strong><i>Creative<br />Programming<br />Partner</i></div>
-            <h3>José Santana</h3>
-            <p>Socio de Creative Programming Partners.</p>
-          </article>
-          <article data-spotlight>
-            <div class="portrait-placeholder portrait-b" aria-hidden="true"><span class="partner-index">Partner 02</span><strong>DC</strong><i>Creative<br />Programming<br />Partner</i></div>
-            <h3>Darnell Cuba</h3>
-            <p>Socio de Creative Programming Partners.</p>
-          </article>
-          <article data-spotlight>
-            <div class="portrait-placeholder portrait-c" aria-hidden="true"><span class="partner-index">Partner 03</span><strong>JF</strong><i>Creative<br />Programming<br />Partner</i></div>
-            <h3>Juan Flores</h3>
-            <p>Socio de Creative Programming Partners.</p>
-          </article>
+
+        <div class="roster" data-roster>
+          <ul>
+            <li data-partner="0" data-reveal="0">
+              <button type="button" data-partner-open="0" aria-haspopup="dialog">
+                <span class="roster-index" aria-hidden="true">01</span>
+                <span class="roster-name"><strong>José Santana</strong><span>Socio fundador</span></span>
+                <span class="roster-meta"><i class="roster-thumb" aria-hidden="true">JS</i><i class="roster-arrow" aria-hidden="true">↗</i></span>
+              </button>
+            </li>
+            <li data-partner="1" data-reveal="1">
+              <button type="button" data-partner-open="1" aria-haspopup="dialog">
+                <span class="roster-index" aria-hidden="true">02</span>
+                <span class="roster-name"><strong>Darnell Cuba</strong><span>Socio fundador</span></span>
+                <span class="roster-meta"><i class="roster-thumb" aria-hidden="true">DC</i><i class="roster-arrow" aria-hidden="true">↗</i></span>
+              </button>
+            </li>
+            <li data-partner="2" data-reveal="2">
+              <button type="button" data-partner-open="2" aria-haspopup="dialog">
+                <span class="roster-index" aria-hidden="true">03</span>
+                <span class="roster-name"><strong>Juan Flores</strong><span>Socio fundador</span></span>
+                <span class="roster-meta"><i class="roster-thumb" aria-hidden="true">JF</i><i class="roster-arrow" aria-hidden="true">↗</i></span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="partner-overlay" data-partner-overlay hidden></div>
+          <div class="partner-dialog" data-partner-dialog role="dialog" aria-modal="true" aria-labelledby="partner-name" hidden>
+            <div class="partner-portrait" aria-hidden="true">
+              <span>retrato 4:5 · reemplazar por foto real</span>
+              <strong data-partner-initials>JS</strong>
+              <span data-partner-index>partner 01</span>
+            </div>
+            <div class="partner-body">
+              <div class="partner-head">
+                <div>
+                  <p class="eyebrow">Socio fundador</p>
+                  <h3 id="partner-name" data-partner-name>José Santana</h3>
+                </div>
+                <button class="partner-close" type="button" data-partner-close aria-label="Cerrar">✕</button>
+              </div>
+              <p>Uno de los tres módulos de CPP: el trabajo se decide en conjunto, entendiendo el problema del negocio antes de escribir una línea de código.</p>
+              <dl>
+                <div><dt>Enfoque</dt><dd>Diseño, desarrollo y decisiones de producto en conjunto</dd></div>
+                <div><dt>Trabaja en</dt><dd>Web, e-commerce, sistemas a medida y automatización</dd></div>
+                <div><dt>Perfil</dt><dd class="is-pending">pendiente · añadir enlace profesional</dd></div>
+              </dl>
+              <p class="partner-quote">“Tres perspectivas. Un mismo flujo.”</p>
+              <a class="text-arrow" href="#contacto" data-partner-close>Trabajar con el equipo <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="mid-cta section-shell reveal" aria-labelledby="cta-title">
+      <section class="mid-cta section-shell" aria-labelledby="cta-title" data-reveal="0">
         <div>
           <h2 id="cta-title">¿Tienes una idea o necesitas digitalizar tu negocio?</h2>
           <p>Cuéntanos qué necesitas y prepararemos una propuesta adaptada a tus objetivos.</p>
         </div>
-        <a class="button button-light" href="#contacto">Solicitar cotización</a>
+        <a class="button button-light" href="#contacto" data-magnetic>Solicitar cotización <span aria-hidden="true">↗</span></a>
       </section>
 
-      <section class="contact section-shell" id="contacto" aria-labelledby="contact-title">
-        <div class="contact-aside reveal">
-          <p class="eyebrow">Contacto</p>
-          <h2 id="contact-title">El mejor proyecto empieza con una conversación clara.</h2>
-          <p>Cuéntanos lo esencial. Usaremos ese contexto para entender el alcance y plantear el siguiente paso adecuado.</p>
-          <div class="contact-options" aria-label="Qué revisaremos en la solicitud">
-            <div><span>01</span><strong>Qué necesita resolver tu negocio</strong></div>
-            <div><span>02</span><strong>Qué solución tiene más sentido</strong></div>
-            <div><span>03</span><strong>Alcance, inversión y próximos pasos</strong></div>
+      <section class="contact" id="contacto" aria-labelledby="contact-title">
+        <div class="section-shell contact-grid">
+          <div class="contact-aside">
+            <p class="eyebrow eyebrow-accent" data-reveal="0">Contacto</p>
+            <h2 id="contact-title" data-reveal="1">El mejor proyecto empieza con una conversación clara.</h2>
+            <p data-reveal="2">Cuéntanos lo esencial. Usaremos ese contexto para entender el alcance y plantear el siguiente paso adecuado.</p>
+            <div class="contact-options" data-reveal="3" aria-label="Qué revisaremos en la solicitud">
+              <div><span>01</span><strong>Qué necesita resolver tu negocio</strong></div>
+              <div><span>02</span><strong>Qué solución tiene más sentido</strong></div>
+              <div><span>03</span><strong>Alcance, inversión y próximos pasos</strong></div>
+            </div>
           </div>
+
+          <form class="contact-form" id="quote-form" data-reveal="1" novalidate data-endpoint="">
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Sitio web</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nombre</label>
+                <input id="name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
+                <span class="field-error" id="name-error"></span>
+              </div>
+              <div class="field">
+                <label for="company">Empresa <span>opcional</span></label>
+                <input id="company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu empresa" />
+              </div>
+              <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="nombre@empresa.com" />
+                <span class="field-error" id="email-error"></span>
+              </div>
+              <div class="field">
+                <label for="phone">WhatsApp o teléfono</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+51 999 999 999" />
+                <span class="field-error" id="phone-error"></span>
+              </div>
+              <div class="field">
+                <label for="service">Servicio solicitado</label>
+                <select id="service" name="service" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Landing page</option>
+                  <option>Página web corporativa</option>
+                  <option>Tienda e-commerce</option>
+                  <option>Aplicación web a medida</option>
+                  <option>Sistema de reservas</option>
+                  <option>Catálogo digital</option>
+                  <option>Automatización de procesos</option>
+                  <option>No estoy seguro</option>
+                </select>
+                <span class="field-error" id="service-error"></span>
+              </div>
+              <div class="field">
+                <label for="budget">Presupuesto aproximado <span>opcional</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Prefiero conversarlo</option>
+                  <option>Menos de USD 500</option>
+                  <option>USD 500 a USD 1,000</option>
+                  <option>USD 1,000 a USD 2,500</option>
+                  <option>Más de USD 2,500</option>
+                </select>
+              </div>
+              <div class="field field-full">
+                <label for="message">Descripción del proyecto</label>
+                <textarea id="message" name="message" rows="5" required minlength="20" placeholder="Cuéntanos qué necesitas, para quién y qué esperas conseguir."></textarea>
+                <span class="field-error" id="message-error"></span>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input id="privacy" name="privacy" type="checkbox" required />
+              <span>Acepto la <a href="privacy.html">política de privacidad</a> y el tratamiento de mis datos para responder esta solicitud.</span>
+            </label>
+            <span class="field-error consent-error" id="privacy-error"></span>
+
+            <button class="button submit-button" type="submit" data-magnetic>Solicitar propuesta</button>
+            <p class="form-note">Respondemos en menos de 24 horas hábiles.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
-
-        <form class="contact-form reveal" id="quote-form" novalidate data-endpoint="">
-          <div class="honeypot" aria-hidden="true">
-            <label for="website">Sitio web</label>
-            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="name">Nombre</label>
-              <input id="name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
-              <span class="field-error" id="name-error"></span>
-            </div>
-            <div class="field">
-              <label for="company">Empresa <span>opcional</span></label>
-              <input id="company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu empresa" />
-            </div>
-            <div class="field">
-              <label for="email">Correo electrónico</label>
-              <input id="email" name="email" type="email" autocomplete="email" required placeholder="nombre@empresa.com" />
-              <span class="field-error" id="email-error"></span>
-            </div>
-            <div class="field">
-              <label for="phone">WhatsApp o teléfono</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+51 999 999 999" />
-              <span class="field-error" id="phone-error"></span>
-            </div>
-            <div class="field">
-              <label for="service">Servicio solicitado</label>
-              <select id="service" name="service" required>
-                <option value="">Selecciona una opción</option>
-                <option>Landing page</option>
-                <option>Página web corporativa</option>
-                <option>Tienda e-commerce</option>
-                <option>Aplicación web a medida</option>
-                <option>Sistema de reservas</option>
-                <option>Catálogo digital</option>
-                <option>Automatización de procesos</option>
-                <option>No estoy seguro</option>
-              </select>
-              <span class="field-error" id="service-error"></span>
-            </div>
-            <div class="field">
-              <label for="budget">Presupuesto aproximado <span>opcional</span></label>
-              <select id="budget" name="budget">
-                <option value="">Prefiero conversarlo</option>
-                <option>Menos de USD 500</option>
-                <option>USD 500 a USD 1,000</option>
-                <option>USD 1,000 a USD 2,500</option>
-                <option>Más de USD 2,500</option>
-              </select>
-            </div>
-            <div class="field field-full">
-              <label for="message">Descripción del proyecto</label>
-              <textarea id="message" name="message" rows="5" required minlength="20" placeholder="Cuéntanos qué necesitas, para quién y qué esperas conseguir."></textarea>
-              <span class="field-error" id="message-error"></span>
-            </div>
-          </div>
-
-          <label class="consent">
-            <input id="privacy" name="privacy" type="checkbox" required />
-            <span>Acepto la <a href="privacy.html">política de privacidad</a> y el tratamiento de mis datos para responder esta solicitud.</span>
-          </label>
-          <span class="field-error consent-error" id="privacy-error"></span>
-
-          <button class="button submit-button" type="submit">Solicitar propuesta</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
       </section>
 
       <section class="faq section-shell" id="preguntas" aria-labelledby="faq-title">
-        <div class="faq-heading reveal">
-          <h2 id="faq-title">Preguntas antes de empezar.</h2>
-          <p>Cuatro respuestas directas para ayudarte a dar el siguiente paso.</p>
+        <div class="faq-heading">
+          <p class="eyebrow" data-reveal="0">Preguntas frecuentes</p>
+          <h2 id="faq-title" data-reveal="1">Preguntas antes de empezar.</h2>
+          <p data-reveal="2">Cuatro respuestas directas para ayudarte a dar el siguiente paso.</p>
         </div>
-        <div class="faq-list reveal">
+        <div class="faq-list" data-reveal="1">
           <details>
-            <summary>¿Cuánto cuesta desarrollar mi proyecto?</summary>
+            <summary>¿Cuánto cuesta desarrollar mi proyecto?<i class="plus" data-plus aria-hidden="true">+</i></summary>
             <p>El precio depende del tipo de solución, el diseño, las funcionalidades y el alcance. Después de conocer tus necesidades, prepararemos una cotización personalizada.</p>
           </details>
           <details>
-            <summary>¿Cuánto tiempo tarda el desarrollo?</summary>
+            <summary>¿Cuánto tiempo tarda el desarrollo?<i class="plus" data-plus aria-hidden="true">+</i></summary>
             <p>El tiempo puede variar según la complejidad del proyecto. Antes de comenzar, estableceremos contigo un cronograma claro de trabajo y entrega.</p>
           </details>
           <details>
-            <summary>¿La página funcionará correctamente en celulares?</summary>
+            <summary>¿La página funcionará correctamente en celulares?<i class="plus" data-plus aria-hidden="true">+</i></summary>
             <p>Sí. Todos nuestros proyectos se diseñan para funcionar correctamente en computadoras, tabletas y dispositivos móviles.</p>
           </details>
           <details>
-            <summary>¿Ofrecen soporte después de entregar el proyecto?</summary>
+            <summary>¿Ofrecen soporte después de entregar el proyecto?<i class="plus" data-plus aria-hidden="true">+</i></summary>
             <p>Sí. Podemos brindar soporte, mantenimiento y mejoras posteriores según las necesidades del proyecto.</p>
           </details>
         </div>
@@ -432,7 +532,11 @@
       <div class="footer-grid section-shell">
         <div class="footer-brand">
           <a class="brand brand-inverse" href="#inicio">
-            <img class="brand-symbol" src="assets/brand/cpp-symbol-dark.svg" alt="" width="40" height="40" />
+            <svg class="brand-symbol" viewBox="0 0 128 128" width="32" height="32" aria-hidden="true">
+              <path fill="var(--accent)" d="M64 8 112 36 90 49 64 34 42 47 20 34Z" />
+              <path fill="#F4F7F5" d="M20 34 42 47v36l22 13v25L20 95Z" />
+              <path fill="#9AAFB9" d="m64 96 22-13V60l22-13v49l-44 25Z" />
+            </svg>
             <span class="brand-name"><strong>CPP</strong><small>Creative Programming Partners</small></span>
           </a>
           <p>Diseñamos y desarrollamos soluciones digitales que ayudan a negocios reales a vender, operar y atender mejor.</p>
