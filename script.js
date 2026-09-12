@@ -386,9 +386,9 @@ if (!reduceMotion) {
 const roster = document.querySelector('[data-roster]');
 if (roster) {
   const partners = [
-    { name: 'José Santana', initials: 'JS', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/jose-santana-sl-2005-pc/' },
-    { name: 'Darnell Cuba', initials: 'DC', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/darnell-cuba-vega-a7b91b377/' },
-    { name: 'Juan Flores', initials: 'JF', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/juan-diego-flores-rios-425340311/' }
+    { name: 'José Santana', initials: 'JS', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/jose-santana-sl-2005-pc/', photo: 'jose' },
+    { name: 'Darnell Cuba', initials: 'DC', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/darnell-cuba-vega-a7b91b377/', photo: 'darnell' },
+    { name: 'Juan Flores', initials: 'JF', role: 'Ingeniero de Software', linkedin: 'https://www.linkedin.com/in/juan-diego-flores-rios-425340311/', photo: 'juan' }
   ];
   const dialog = roster.querySelector('[data-partner-dialog]');
   const overlay = roster.querySelector('[data-partner-overlay]');
@@ -410,8 +410,11 @@ if (roster) {
     if (!partner) return;
     dialog.querySelector('[data-partner-name]').textContent = partner.name;
     dialog.querySelector('[data-partner-initials]').textContent = partner.initials;
-    dialog.querySelector('[data-partner-index]').textContent = `partner 0${index + 1}`;
     dialog.querySelector('[data-partner-role]').textContent = partner.role;
+    const photo = dialog.querySelector('[data-partner-photo]');
+    photo.src = `assets/team/${partner.photo}-480.webp`;
+    photo.srcset = `assets/team/${partner.photo}-480.webp 480w, assets/team/${partner.photo}-960.webp 960w`;
+    photo.alt = `Retrato de ${partner.name}`;
     const profile = dialog.querySelector('[data-partner-link]');
     profile.href = partner.linkedin;
     profile.setAttribute('aria-label', `Ver el perfil de ${partner.name} en LinkedIn`);
