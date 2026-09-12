@@ -269,6 +269,9 @@ details[open] > summary > .plus { transform: rotate(45deg); color: var(--accent)
 .partner-body dl div { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
 .partner-body dt { flex: 0 0 104px; color: var(--muted-soft); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .partner-body dd { margin: 0; color: #2a3f4a; font-size: .91rem; font-weight: 600; }
+.partner-link { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 2px; color: var(--accent); font-weight: 700; border-bottom: 1.5px solid rgba(var(--accent-rgb), .28); transition: color 250ms ease, border-color 250ms ease, gap 250ms ease; }
+.partner-link:hover { color: var(--accent-deep); border-bottom-color: var(--accent); gap: 11px; }
+.partner-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 .partner-quote { margin: 24px 0 0; color: var(--ink); font-family: var(--serif); font-style: italic; font-size: 1.06rem; }
 .partner-body .text-arrow { margin-top: 22px; }
 
